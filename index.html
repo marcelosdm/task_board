@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quadro de Atividades</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/reset.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>Quadro de Atividades</h1>
+		</div>
+	</header>
+	<main>
+		<section class="container">
+			<h2 class="titulo">Tarefas</h2>
+			<label for="filtrar-tabela">Filtre:</label>
+			<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do responsável">
+			<table>
+				<thead>
+					<tr>
+						<th>Tarefa</th>
+						<th>Responsável</th>
+						<th>Status</th>
+						<th>Previsão</th>
+					</tr>
+				</thead>
+				<tbody id="tabela-atividades">
+					<tr class="atividade">
+						<td class="info-atividade">{{atividade}}</td>
+						<td class="info-resp">{{responsavel}}</td>
+						<td class="status">{{status}}</td>
+						<td class="previsao">{{previsao}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<span id="erro-ajax" class="invisivel">Erro ao buscar atividades</span>
+			<button class="buscar-atividades" class="botao bto-principal">Buscar Atividades</button>
+		</section>
+	</main>
+	<section class="container">
+		<h2 id="titulo-form">Adicionar nova atividade</h2>
+		<ul id="mensagens-erro"></ul>
+		<form id="form-adiciona">
+			<div class="">
+				<label for="atividade">Atividade:</label>
+				<input id="atividade" name="atividade" type="text" placeholder="digite a atividade" class="campo"></input>
+			</div>
+			<div class="grupo">
+				<label for="responsavel">Responsável:</label>
+				<input id="responsavel" name="responsavel" type="text" placeholder="digite o responsável pela atividade" class="campo campo-medio"></input>
+			</div>
+			<div class="grupo">
+				<label for="status">Status:</label>
+				<input id="status" name="status" type="text" placeholder="selecione o status da atividade" class="campo campo-medio">
+			</div>
+			<div class="grupo">
+				<label for="previsao">Previsão:</label>
+				<input id="previsao" name="previsao" type="text" placeholder="informe a previsão de conclusão para a atividade" class="campo campo-medio">
+			</div>
+			<button id="adicionar-atividade" class="botao bto-principal">Adicionar</button>
+		</form>
+	</section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
